@@ -26,7 +26,7 @@ for i in range(len(s)):
 
 print(count, max(lmax))
 print(time.time() - t)
-# 11?6?
+
 
 
 
