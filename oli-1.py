@@ -1,0 +1,1 @@
+a = int(input())b = int(input())t = int(input())x = t // aa1 = a * ((x + 1) if x * t < a else x) - tx = t // bb1 = b * ((x + 1) if x * t < b else x) - tprint(a1 if a1 == b1 else a1 if a1 < b1 else b1)
