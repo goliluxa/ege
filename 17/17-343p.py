@@ -1,6 +1,4 @@
-import time
 
-t = time.time()
 f = open('17-343.txt')
 s = f.read().split("\n")
 count = 0
@@ -9,21 +7,55 @@ lmax = list()
 for i in range(len(s)):
     try:
         k = 0
+
+        # Первое число
         a = s[i]
-        k += 1 if sum([int(j) for j in list(a)[::2]]) % sum([int(j) for j in list(a)[1::2]]) == 0 else 0
-        a2 = s[i + 1]
-        k += 1 if sum([int(j) for j in list(a2)[::2]]) % sum([int(j) for j in list(a2)[1::2]]) == 0 else 0
-        a3 = s[i + 2]
-        k += 1 if sum([int(j) for j in list(a3)[::2]]) % sum([int(j) for j in list(a3)[1::2]]) == 0 else 0
+        ss1 = 0 # Доп счётчик
+        ss2 = 0 # Доп счётчик
+
+        for j in list(a)[::2]:
+            ss1 += int(j) # Сумма чисел в нечёт поз
+
+        for j in list(a)[1::2]:
+            ss2 += int(j) # Сумма чисел в чёт поз
+
+        if ss1 % ss2 == 0:
+            k += 1 # Если усл выполнится
+
+        # Второе число
+        a = s[i + 1]
+        ss1 = 0 # Доп счётчик
+        ss2 = 0 # Доп счётчик
+
+        for j in list(a)[::2]:
+            ss1 += int(j) # Сумма чисел в нечёт поз
+
+        for j in list(a)[1::2]:
+            ss2 += int(j) # Сумма чисел в чёт поз
+
+        if ss1 % ss2 == 0:
+            k += 1 # Если усл выполнится
+
+
+        a = s[i + 2] # Третье число
+        ss1 = 0 # Доп счётчик
+        ss2 = 0 # Доп счётчик
+
+        for j in list(a)[::2]:
+            ss1 += int(j) # Сумма чисел в нечёт поз
+
+        for j in list(a)[1::2]:
+            ss2 += int(j) # Сумма чисел в чёт поз
+
+        if ss1 % ss2 == 0:
+            k += 1 # Если усл выполнится
 
         if k == 3:
             count += 1
-            lmax.append(sum([int(a), int(a2), int(a3)]))
+            lmax.append(sum([int(s[i]), int(s[i + 1]), int(s[i + 2])]))
     except:
         pass
-
 print(count, min(lmax))
-print(time.time() - t)
 
 
 
