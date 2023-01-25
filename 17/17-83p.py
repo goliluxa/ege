@@ -1,5 +1,3 @@
-# 34 11196
-
 s = [str(i) for i in range(1111, 10000)]
 lmax = list()
 
