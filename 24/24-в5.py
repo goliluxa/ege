@@ -6,7 +6,10 @@ lmax = list()
 for i in a:
     lmax.append(i.count("EF"))
 
-print(max(lmax))
+k = 0
+for i in lmax:
+    if i > 1:
+        print(i)
+        k += 1
 
-
-# print(lmax)
+print(k)
