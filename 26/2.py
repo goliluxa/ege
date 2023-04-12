@@ -19,11 +19,7 @@ for t in pos:
     rad[t[0] - 1][t[1] - 1] = "1"
 
 
-posic = [0] * 100_000
-k_pos = 0
-flag_start = False
-count = 0
-k_ch = 0
+
 
 for i in rad:
     if k_ch <= 7:
